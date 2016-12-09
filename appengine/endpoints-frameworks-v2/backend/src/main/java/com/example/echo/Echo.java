@@ -23,6 +23,10 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.google.api.server.spi.config.AuthLevel;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 /** The Echo API which Endpoints will be exposing. */
 @Api(
     name = "echo",
@@ -47,6 +51,19 @@ public class Echo {
   @ApiMethod(name = "echo")
   public Message echo(Message message) {
     return message;
+  }
+
+  @ApiMethod(name = "words")
+  public List<Word> word(Message message) {
+    List<Word> mywords = new ArrayList<Word>();
+
+    Word wor1 = new Word("Sky","asman");
+    mywords.add(wor1);
+
+    Word wor2 = new Word("Eagle","uqab");
+    mywords.add(wor2);
+
+    return mywords;
   }
 
   /**
