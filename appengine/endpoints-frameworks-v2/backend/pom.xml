@@ -60,6 +60,11 @@
             <artifactId>endpoints-framework-auth</artifactId>
             <version>${endpoints.management.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-datastore</artifactId>
+            <version>0.6.0</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -98,6 +103,14 @@
                                 <version>1.9.30</version>
                             </dependency>
                         </dependencies>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.4.0</version>
+                        <configuration>
+                            <mainClass>com.google.datastore.snippets.TaskList</mainClass>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
